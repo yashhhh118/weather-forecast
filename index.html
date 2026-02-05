@@ -7,91 +7,164 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <h1>🌤️ Maharashtra Weather Hub</h1>
-            <p class="subtitle">Real-time weather updates for major cities in Maharashtra</p>
-        </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <span class="brand-icon">🌤️</span>
+                <span class="brand-name">Maharashtra Weather Hub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#" class="nav-link">Weather</a></li>
+                <li><a href="#" class="nav-link">Forecast</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-        <!-- City Selection Section -->
-        <section class="search-section">
-            <label for="citySelect">Select a City:</label>
-            <select id="citySelect">
-                <option value="">-- Choose a city --</option>
-                <option value="mumbai">Mumbai </option>
-                <option value="pune">Pune </option>
-                <option value="nagpur">Nagpur </option>
-                <option value="nashik">Nashik </option>
-                <option value="aurangabad">Aurangabad </option>
-                <option value="kolhapur">Kolhapur </option>
-                <option value="solapur">Solapur </option>
-                <option value="sangli">Sangli </option>
-                <option value="satara">Satara </option>
-                <option value="ahmednagar">Ahmednagar </option>
-                <option value="jalna">Jalna </option>
-                <option value="parbhani">Parbhani </option>
-                <option value="beed">Beed </option>
-                <option value="latur">Latur </option>
-                <option value="washim">Washim </option>
-                <option value="buldhana">Buldhana </option>
-                <option value="akola">Akola </option>
-                <option value="amravati">Amravati </option>
-                <option value="yavatmal">Yavatmal </option>
-                <option value="wardha">Wardha </option>
-                <option value="chandrapur">Chandrapur </option>
-                <option value="gondia">Gondia </option>
-                <option value="nanded">Nanded </option>
-                <option value="ratnagiri">Ratnagiri </option>
-                <option value="thane">Thane </option>
-            </select>
-            <button id="fetchBtn" class="fetch-btn">Get Weather</button>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Real-time Weather Updates</h1>
+                <p class="hero-subtitle">Get accurate weather information for all major cities in Maharashtra, India</p>
+            </div>
         </section>
 
-        <!-- Weather Card Section -->
-        <section class="weather-section">
-            <div id="weatherCard" class="weather-card hidden">
-                <!-- City Name -->
-                <div class="city-header">
-                    <h2 id="cityName">City Name</h2>
-                    <p id="lastUpdate" class="update-time">Updated: --:--:--</p>
-                </div>
-
-                <!-- Weather Information -->
-                <div class="weather-info">
-                    <!-- Temperature Display -->
-                    <div class="weather-item temperature">
-                        <span class="weather-label">Temperature</span>
-                        <span id="temperature" class="weather-value">--°C</span>
-                    </div>
-
-                    <!-- Wind Speed Display -->
-                    <div class="weather-item wind-speed">
-                        <span class="weather-label">Wind Speed</span>
-                        <span id="windSpeed" class="weather-value">-- km/h</span>
-                    </div>
-
-                    <!-- Weather Condition Display -->
-                    <div class="weather-item condition">
-                        <span class="weather-label">Condition</span>
-                        <span id="condition" class="weather-value">--</span>
-                    </div>
+        <!-- Search Section -->
+        <section class="search-container">
+            <div class="search-card">
+                <h2>Select Your City</h2>
+                <div class="search-form">
+                    <select id="citySelect" class="city-select">
+                        <option value="">-- Choose a city --</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="nagpur">Nagpur</option>
+                        <option value="nashik">Nashik</option>
+                        <option value="aurangabad">Aurangabad</option>
+                        <option value="kolhapur">Kolhapur</option>
+                        <option value="solapur">Solapur</option>
+                        <option value="sangli">Sangli</option>
+                        <option value="satara">Satara</option>
+                        <option value="ahmednagar">Ahmednagar</option>
+                        <option value="jalna">Jalna</option>
+                        <option value="parbhani">Parbhani</option>
+                        <option value="beed">Beed</option>
+                        <option value="latur">Latur</option>
+                        <option value="washim">Washim</option>
+                        <option value="buldhana">Buldhana</option>
+                        <option value="akola">Akola</option>
+                        <option value="amravati">Amravati</option>
+                        <option value="yavatmal">Yavatmal</option>
+                        <option value="wardha">Wardha</option>
+                        <option value="chandrapur">Chandrapur</option>
+                        <option value="gondia">Gondia</option>
+                        <option value="nanded">Nanded</option>
+                        <option value="ratnagiri">Ratnagiri</option>
+                        <option value="thane">Thane</option>
+                    </select>
+                    <button id="fetchBtn" class="search-btn">
+                        <span>Get Weather</span>
+                        <span class="btn-icon">→</span>
+                    </button>
                 </div>
             </div>
+        </section>
+
+        <!-- Weather Display Section -->
+        <section class="weather-display">
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner hidden"></div>
 
             <!-- Error Message Display -->
             <div id="errorMessage" class="error-message hidden"></div>
 
-            <!-- Loading Spinner -->
-            <div id="loadingSpinner" class="spinner hidden"></div>
-        </section>
+            <!-- Current Weather Card -->
+            <div id="weatherCard" class="weather-card-container hidden">
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <div class="weather-city-info">
+                            <h2 id="cityName">City Name</h2>
+                            <p id="lastUpdate" class="update-time">Updated: --:--:--</p>
+                        </div>
+                        <div class="weather-icon">🌤️</div>
+                    </div>
 
-        <!-- 7-Day Forecast Section -->
-        <section class="forecast-section">
-            <h3 class="forecast-title">📅 7-Day Forecast</h3>
-            <div id="forecastContainer" class="forecast-container"></div>
+                    <div class="weather-main">
+                        <div class="temperature-block">
+                            <span id="temperature" class="temp-value">--°C</span>
+                            <span id="condition" class="temp-condition">--</span>
+                        </div>
+
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💨</span>
+                                <div class="detail-info">
+                                    <span class="detail-label">Wind Speed</span>
+                                    <span id="windSpeed" class="detail-value">-- km/h</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💧</span>
+                                <div class="detail-info">
+                                    <span class="detail-label">Humidity</span>
+                                    <span class="detail-value">--</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🔽</span>
+                                <div class="detail-info">
+                                    <span class="detail-label">Pressure</span>
+                                    <span class="detail-value">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7-Day Forecast Section -->
+            <div id="forecastCard" class="forecast-card-container hidden">
+                <h3 class="forecast-title">📅 7-Day Weather Forecast</h3>
+                <div class="forecast-scroll">
+                    <div id="forecastContainer" class="forecast-container"></div>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Maharashtra Weather Hub</h4>
+                <p>Your trusted source for accurate weather information</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Weather</a></li>
+                    <li><a href="#">Forecast</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>API Source</h4>
+                <p>Powered by <a href="https://open-meteo.com" target="_blank">Open-Meteo</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maharashtra Weather Hub. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

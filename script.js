@@ -162,11 +162,11 @@ const WEATHER_CODES = {
 // DOM Elements
 const citySelect = document.getElementById("citySelect");
 const fetchBtn = document.getElementById("fetchBtn");
-const weatherCard = document.getElementById("weatherCard");
+const weatherCardContainer = document.getElementById("weatherCard");
 const errorMessage = document.getElementById("errorMessage");
 const loadingSpinner = document.getElementById("loadingSpinner");
-
 const forecastContainer = document.getElementById("forecastContainer");
+const forecastCardContainer = document.getElementById("forecastCard");
 
 // Event Listeners
 fetchBtn.addEventListener("click", handleFetchWeather);
@@ -336,6 +336,9 @@ function displayForecast(dailyData) {
 
         forecastContainer.appendChild(forecastCard);
     });
+
+    // Show forecast card
+    showForecastCard();
 }
 
 /**
@@ -381,14 +384,21 @@ function hideError() {
  * Display weather card
  */
 function showWeatherCard() {
-    weatherCard.classList.remove("hidden");
+    weatherCardContainer.classList.remove("hidden");
 }
 
 /**
  * Hide weather card
  */
 function hideWeatherCard() {
-    weatherCard.classList.add("hidden");
+    weatherCardContainer.classList.add("hidden");
+}
+
+/**
+ * Display forecast card
+ */
+function showForecastCard() {
+    forecastCardContainer.classList.remove("hidden");
 }
 
 /**

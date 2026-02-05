@@ -22,19 +22,6 @@ body {
     min-height: 100vh;
     font-size: clamp(14px, 2vw, 16px);
 }
-
-/* ========================================
-   Navigation Bar Styles
-   ======================================== */
-.navbar {
-    background: linear-gradient(90deg, #1e3a5f 0%, #2c5282 50%, #3d5a80 100%);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 8px 32px rgba(30, 58, 95, 0.3);
-    backdrop-filter: blur(10px);
-}
-
 .navbar-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -227,13 +214,13 @@ body {
 }
 
 .search-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(74, 159, 181, 0.05) 100%);
-    border: 2px solid rgba(74, 159, 181, 0.3);
+    background: linear-gradient(135deg, rgba(15,18,30,0.65) 0%, rgba(31,31,61,0.45) 100%);
+    border: 1px solid rgba(74, 159, 181, 0.12);
     padding: clamp(30px, 5vh, 50px) clamp(25px, 5vw, 40px);
     border-radius: clamp(12px, 2vw, 16px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 28px 80px rgba(4,8,20,0.5), inset 0 1px 0 rgba(255, 255, 255, 0.02);
     animation: slideUp 0.8s ease-out;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 .search-card h2 {
@@ -264,20 +251,75 @@ body {
     color: white;
 
 
+/* Modern button & accessibility improvements */
+.search-btn:focus {
+    outline: none;
+    box-shadow: 0 6px 22px rgba(74, 159, 181, 0.26), 0 0 0 3px rgba(74,159,181,0.06);
+}
+
+.search-btn {
+    padding: clamp(10px, 1.2vh, 14px) clamp(22px, 4vw, 34px);
+    background: linear-gradient(135deg, #2c5282 0%, #4a6fa5 100%);
+    color: #fff;
+    border: 0;
+    border-radius: 12px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.12s ease;
+    box-shadow: 0 8px 24px rgba(44,82,130,0.18);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* City select - modern visible styling */
 .city-select {
     flex: 1;
     min-width: 280px;
     padding: clamp(12px, 1.5vh, 16px) clamp(15px, 2vw, 20px);
-    border: 2px solid rgba(74, 159, 181, 0.4);
-    border-radius: clamp(8px, 1.5vw, 12px);
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    border: 1px solid rgba(74, 159, 181, 0.35);
+    border-radius: 10px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
     background-color: #ffffff;
     color: #1e3a5f;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    transition: all 0.18s ease;
+    font-weight: 600;
+    backdrop-filter: blur(2px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%231e3a5f' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 12px;
+    padding-right: clamp(40px, 6vw, 48px);
+    height: clamp(40px, 4vh, 46px);
+    line-height: 1.1;
+}
+
+.city-select:hover {
+    border-color: #4a6fa5;
+    background-color: #f7fbfd;
+    box-shadow: 0 6px 18px rgba(74, 159, 181, 0.12);
+}
+
+.city-select:focus {
+    outline: none;
+    border-color: #5dade2;
+    box-shadow: 0 0 18px rgba(93, 173, 226, 0.24);
+    background-color: #ffffff;
+}
     backdrop-filter: blur(5px);
 }}
+    height: clamp(40px, 4vh, 46px);
+    line-height: 1.1;
 
 .city-select:hover {
     border-color: #4a6fa5;
