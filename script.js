@@ -166,6 +166,8 @@ const weatherCard = document.getElementById("weatherCard");
 const errorMessage = document.getElementById("errorMessage");
 const loadingSpinner = document.getElementById("loadingSpinner");
 
+const forecastContainer = document.getElementById("forecastContainer");
+
 // Event Listeners
 fetchBtn.addEventListener("click", handleFetchWeather);
 citySelect.addEventListener("change", resetUI);
@@ -214,10 +216,11 @@ async function fetchWeatherData(cityKey) {
     showLoadingSpinner();
     hideError();
     hideWeatherCard();
+    clearForecast();
 
     try {
-        // Build API URL with coordinates
-        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto`;
+        // Build API URL with coordinates for current weather and 7-day forecast
+        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_sum&timezone=auto&past_days=2&forecast_days=7`;
 
         // Fetch data from API
         const response = await fetch(apiUrl);
@@ -231,8 +234,9 @@ async function fetchWeatherData(cityKey) {
         const data = await response.json();
 
         // Validate and extract data
-        if (data.current) {
+        if (data.current && data.daily) {
             displayWeather(city.name, data.current);
+            displayForecast(data.daily);
         } else {
             throw new Error("Invalid API response structure");
         }
@@ -274,6 +278,64 @@ function displayWeather(cityName, currentData) {
 
     // Show weather card
     showWeatherCard();
+}
+
+/**
+ * Display 7-day forecast data on the UI
+ * @param {object} dailyData - Daily forecast data from API
+ */
+function displayForecast(dailyData) {
+    const dates = dailyData.time;
+    const tempMax = dailyData.temperature_2m_max;
+    const tempMin = dailyData.temperature_2m_min;
+    const weatherCodes = dailyData.weather_code;
+    const precipitation = dailyData.precipitation_sum;
+
+    // Clear previous forecast
+    forecastContainer.innerHTML = "";
+
+    // Get today's date
+    const today = new Date().toISOString().split('T')[0];
+
+    // Display 7 days
+    dates.forEach((dateStr, index) => {
+        const date = new Date(dateStr);
+        const dayName = date.toLocaleDateString("en-IN", { weekday: "short" });
+        const formattedDate = date.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
+        
+        // Determine if it's past, today, or future
+        let badgeClass = "future";
+        let badgeText = "Forecast";
+        if (dateStr < today) {
+            badgeClass = "past";
+            badgeText = "Past";
+        } else if (dateStr === today) {
+            badgeClass = "today";
+            badgeText = "Today";
+        }
+
+        const weatherCondition = WEATHER_CODES[weatherCodes[index]] || "Unknown";
+
+        // Create forecast card
+        const forecastCard = document.createElement("div");
+        forecastCard.className = "forecast-day";
+        forecastCard.innerHTML = `
+            <div class="forecast-date-badge ${badgeClass}">${badgeText}</div>
+            <div class="forecast-day-name">${dayName}</div>
+            <div class="forecast-date">${formattedDate}</div>
+            <div class="forecast-condition">${weatherCondition}</div>
+            <div class="forecast-temp">
+                <span class="forecast-temp-max">${Math.round(tempMax[index])}°</span>
+                <span class="forecast-temp-min">${Math.round(tempMin[index])}°</span>
+            </div>
+            <div class="forecast-detail">
+                <span class="forecast-detail-label">Rainfall</span>
+                <span class="forecast-detail-value">${Math.round(precipitation[index] * 10) / 10} mm</span>
+            </div>
+        `;
+
+        forecastContainer.appendChild(forecastCard);
+    });
 }
 
 /**
@@ -327,6 +389,13 @@ function showWeatherCard() {
  */
 function hideWeatherCard() {
     weatherCard.classList.add("hidden");
+}
+
+/**
+ * Clear forecast display
+ */
+function clearForecast() {
+    forecastContainer.innerHTML = "";
 }
 
 /**

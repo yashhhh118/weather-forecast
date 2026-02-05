@@ -303,6 +303,148 @@ body {
 }
 
 /* ========================================
+   7-Day Forecast Section Styles
+   ======================================== */
+.forecast-section {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 3px solid #FF9933;
+}
+
+.forecast-title {
+    color: #138808;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+/* Individual Forecast Card */
+.forecast-day {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(19, 136, 8, 0.05) 100%);
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.forecast-day:hover {
+    border-color: #FF9933;
+    box-shadow: 0 4px 12px rgba(255, 153, 51, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Badge for Today/Past/Future */
+.forecast-date-badge {
+    display: inline-block;
+    background-color: #FF9933;
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.forecast-date-badge.past {
+    background-color: #999;
+}
+
+.forecast-date-badge.today {
+    background-color: #138808;
+    box-shadow: 0 2px 6px rgba(19, 136, 8, 0.3);
+}
+
+.forecast-date-badge.future {
+    background-color: #FF9933;
+}
+
+/* Day Name */
+.forecast-day-name {
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+/* Date */
+.forecast-date {
+    color: #999;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/* Weather Icon/Condition */
+.forecast-condition {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 8px 0;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Temperature Display */
+.forecast-temp {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.forecast-temp-max {
+    color: #FF6B6B;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.forecast-temp-min {
+    color: #4ECDC4;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Rainfall/Humidity */
+.forecast-detail {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 6px 0;
+    padding: 4px;
+    border-top: 1px solid #eee;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.forecast-detail-label {
+    font-weight: 600;
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.forecast-detail-value {
+    color: #333;
+    font-weight: 700;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.hidden {
+    display: none !important;
+}
+
+/* ========================================
    Responsive Design - Mobile Optimization
    ======================================== */
 @media (max-width: 480px) {
@@ -335,6 +477,19 @@ body {
     #citySelect {
         font-size: 0.95rem;
         padding: 10px 12px;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+    }
+
+    .forecast-day {
+        padding: 12px;
+    }
+
+    .forecast-title {
+        font-size: 1.2rem;
     }
 }
 
