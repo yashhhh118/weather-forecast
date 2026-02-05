@@ -29,6 +29,106 @@ const CITIES = {
         name: "Aurangabad",
         latitude: 19.8762,
         longitude: 75.3433
+    },
+    kolhapur: {
+        name: "Kolhapur",
+        latitude: 16.7050,
+        longitude: 74.2314
+    },
+    solapur: {
+        name: "Solapur",
+        latitude: 17.6599,
+        longitude: 75.9064
+    },
+    sangli: {
+        name: "Sangli",
+        latitude: 16.8538,
+        longitude: 74.5854
+    },
+    satara: {
+        name: "Satara",
+        latitude: 17.6745,
+        longitude: 73.9850
+    },
+    ahmednagar: {
+        name: "Ahmednagar",
+        latitude: 19.0950,
+        longitude: 74.7421
+    },
+    jalna: {
+        name: "Jalna",
+        latitude: 19.8480,
+        longitude: 75.8809
+    },
+    parbhani: {
+        name: "Parbhani",
+        latitude: 19.2683,
+        longitude: 76.7597
+    },
+    beed: {
+        name: "Beed",
+        latitude: 18.9981,
+        longitude: 76.4719
+    },
+    latur: {
+        name: "Latur",
+        latitude: 18.4088,
+        longitude: 76.5246
+    },
+    washim: {
+        name: "Washim",
+        latitude: 20.1063,
+        longitude: 76.9219
+    },
+    buldhana: {
+        name: "Buldhana",
+        latitude: 20.5229,
+        longitude: 76.1795
+    },
+    akola: {
+        name: "Akola",
+        latitude: 20.7136,
+        longitude: 77.0169
+    },
+    amravati: {
+        name: "Amravati",
+        latitude: 20.8449,
+        longitude: 77.7540
+    },
+    yavatmal: {
+        name: "Yavatmal",
+        latitude: 20.4183,
+        longitude: 78.1354
+    },
+    wardha: {
+        name: "Wardha",
+        latitude: 20.7465,
+        longitude: 78.6033
+    },
+    chandrapur: {
+        name: "Chandrapur",
+        latitude: 19.2783,
+        longitude: 79.3068
+    },
+    gondia: {
+        name: "Gondia",
+        latitude: 21.4447,
+        longitude: 80.1854
+    },
+    nanded: {
+        name: "Nanded",
+        latitude: 19.1610,
+        longitude: 77.3268
+    },
+    ratnagiri: {
+        name: "Ratnagiri",
+        latitude: 16.9891,
+        longitude: 73.2993
+    },
+    thane: {
+        name: "Thane",
+        latitude: 19.2183,
+        longitude: 72.9781
     }
 };
 
