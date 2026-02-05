@@ -20,6 +20,7 @@ body {
     color: #f5f5f5;
     line-height: 1.6;
     min-height: 100vh;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 /* ========================================
@@ -37,11 +38,11 @@ body {
 .navbar-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 clamp(15px, 3vw, 30px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: clamp(60px, 10vh, 80px);
 }
 
 .navbar-brand {
@@ -49,14 +50,14 @@ body {
     align-items: center;
     gap: 15px;
     color: white;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
     font-weight: 800;
     text-decoration: none;
     letter-spacing: 0.5px;
 }
 
 .brand-icon {
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
     animation: float 3s ease-in-out infinite;
 }
 
@@ -146,7 +147,7 @@ body {
 .hero-section {
     background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%),
                 linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff6b35 100%);
-    padding: 100px 30px;
+    padding: clamp(50px, 8vh, 100px) clamp(20px, 3vw, 30px);
     text-align: center;
     color: #ff6b35;
     position: relative;
@@ -178,9 +179,9 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 2vh, 20px);
     background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -189,7 +190,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.3rem);
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -215,7 +216,7 @@ body {
 .main-content {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 30px;
+    padding: clamp(40px, 5vh, 60px) clamp(20px, 3vw, 30px);
 }
 
 /* ========================================
@@ -228,8 +229,8 @@ body {
 .search-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
     border: 2px solid rgba(233, 30, 99, 0.3);
-    padding: 50px 40px;
-    border-radius: 16px;
+    padding: clamp(30px, 5vh, 50px) clamp(25px, 5vw, 40px);
+    border-radius: clamp(12px, 2vw, 16px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     animation: slideUp 0.8s ease-out;
     backdrop-filter: blur(10px);
@@ -237,8 +238,8 @@ body {
 
 .search-card h2 {
     color: #e91e63;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    margin-bottom: clamp(20px, 3vh, 30px);
     text-align: center;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -253,10 +254,10 @@ body {
 .city-select {
     flex: 1;
     min-width: 280px;
-    padding: 16px 20px;
+    padding: clamp(12px, 1.5vh, 16px) clamp(15px, 2vw, 20px);
     border: 2px solid rgba(233, 30, 99, 0.4);
-    border-radius: 12px;
-    font-size: 1.05rem;
+    border-radius: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     background-color: rgba(31, 31, 61, 0.8);
     color: #ffffff;
     cursor: pointer;
@@ -279,12 +280,12 @@ body {
 }
 
 .search-btn {
-    padding: 16px 40px;
+    padding: clamp(12px, 1.5vh, 16px) clamp(25px, 5vw, 40px);
     background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
     color: white;
     border: none;
-    border-radius: 12px;
-    font-size: 1.05rem;
+    border-radius: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -375,7 +376,7 @@ body {
 .weather-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
     border: 2px solid rgba(233, 30, 99, 0.2);
-    border-radius: 20px;
+    border-radius: clamp(14px, 2.5vw, 20px);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -383,7 +384,7 @@ body {
 
 .weather-header {
     background: linear-gradient(135deg, rgba(233, 30, 99, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
-    padding: 35px 40px;
+    padding: clamp(25px, 3vh, 35px) clamp(25px, 5vw, 40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -392,8 +393,8 @@ body {
 
 .weather-city-info h2 {
     color: #e91e63;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    margin-bottom: clamp(8px, 1vh, 10px);
     font-weight: 800;
     letter-spacing: -0.5px;
 }
@@ -416,9 +417,9 @@ body {
 }
 
 .weather-main {
-    padding: 50px 40px;
+    padding: clamp(30px, 4vh, 50px) clamp(25px, 5vw, 40px);
     display: flex;
-    gap: 60px;
+    gap: clamp(40px, 6vw, 60px);
     flex-wrap: wrap;
 }
 
@@ -429,7 +430,7 @@ body {
 }
 
 .temp-value {
-    font-size: 5rem;
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 900;
     background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
     -webkit-background-clip: text;
@@ -439,7 +440,7 @@ body {
 }
 
 .temp-condition {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     color: rgba(233, 30, 99, 0.9);
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -531,8 +532,8 @@ body {
 .forecast-card-container {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
     border: 2px solid rgba(233, 30, 99, 0.2);
-    padding: 40px;
-    border-radius: 20px;
+    padding: clamp(25px, 4vh, 40px);
+    border-radius: clamp(14px, 2.5vw, 20px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     animation: slideUp 0.8s ease-out;
     backdrop-filter: blur(10px);
@@ -540,8 +541,8 @@ body {
 
 .forecast-title {
     color: #e91e63;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: clamp(20px, 3vh, 30px);
     text-align: left;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -581,12 +582,12 @@ body {
 .forecast-day {
     background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
     border: 2px solid rgba(233, 30, 99, 0.2);
-    border-radius: 14px;
-    padding: 22px;
+    border-radius: clamp(10px, 1.5vw, 14px);
+    padding: clamp(16px, 2vh, 22px);
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
-    min-width: 155px;
+    min-width: clamp(140px, 20vw, 155px);
     flex-shrink: 0;
 }
 
@@ -757,8 +758,8 @@ body {
 .footer {
     background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff6b35 100%);
     color: white;
-    padding: 60px 30px 25px;
-    margin-top: 100px;
+    padding: clamp(40px, 5vh, 60px) clamp(20px, 3vw, 30px) clamp(20px, 3vh, 25px);
+    margin-top: clamp(60px, 8vh, 100px);
 }
 
 .footer-content {
