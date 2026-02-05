@@ -251,6 +251,19 @@ body {
     flex-wrap: wrap;
 }
 
+.city-select option {
+    background-color: #ffffff;
+    color: #1e3a5f;
+    padding: 10px 15px;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 500;
+}
+
+.city-select option:checked {
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
+    color: white;
+
+
 .city-select {
     flex: 1;
     min-width: 280px;
@@ -258,26 +271,26 @@ body {
     border: 2px solid rgba(74, 159, 181, 0.4);
     border-radius: clamp(8px, 1.5vw, 12px);
     font-size: clamp(0.9rem, 2vw, 1.05rem);
-    background-color: rgba(31, 31, 61, 0.8);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #1e3a5f;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
     backdrop-filter: blur(5px);
-}
+}}
 
 .city-select:hover {
     border-color: #4a6fa5;
-    background-color: rgba(74, 159, 181, 0.1);
-    box-shadow: 0 8px 25px rgba(74, 159, 181, 0.2);
-}
+    background-color: #f0f4f8;
+    box-shadow: 0 8px 25px rgba(74, 159, 181, 0.25);
+}}
 
 .city-select:focus {
     outline: none;
     border-color: #5dade2;
     box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);
-    background-color: rgba(74, 159, 181, 0.15);
-}
+    background-color: #f8fbfd;
+}}
 
 .search-btn {
     padding: clamp(12px, 1.5vh, 16px) clamp(25px, 5vw, 40px);
