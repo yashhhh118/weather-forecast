@@ -220,7 +220,7 @@ async function fetchWeatherData(cityKey) {
 
     try {
         // Build API URL with coordinates for current weather and 7-day forecast
-        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_sum&timezone=auto&past_days=2&forecast_days=7`;
+        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_sum&timezone=auto&past_days=2&forecast_days=7`;
 
         // Fetch data from API
         const response = await fetch(apiUrl);
@@ -265,6 +265,8 @@ function displayWeather(cityName, currentData) {
     // Extract data from API response
     const temperature = currentData.temperature_2m;
     const windSpeed = currentData.wind_speed_10m;
+    const humidity = currentData.relative_humidity_2m;
+    const pressure = currentData.pressure_msl;
     const weatherCode = currentData.weather_code;
     const weatherCondition = WEATHER_CODES[weatherCode] || "Unknown";
     const time = currentData.time;
@@ -275,6 +277,13 @@ function displayWeather(cityName, currentData) {
     document.getElementById("windSpeed").textContent = `${Math.round(windSpeed)} km/h`;
     document.getElementById("condition").textContent = weatherCondition;
     document.getElementById("lastUpdate").textContent = `Updated: ${formatTime(time)}`;
+    
+    // Update humidity and pressure
+    const humidityElement = document.querySelector('.weather-details .detail-item:nth-child(2) .detail-value');
+    if (humidityElement) humidityElement.textContent = `${humidity}%`;
+    
+    const pressureElement = document.querySelector('.weather-details .detail-item:nth-child(3) .detail-value');
+    if (pressureElement) pressureElement.textContent = `${Math.round(pressure)} hPa`;
 
     // Show weather card
     showWeatherCard();
