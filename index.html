@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Weather Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🌤️ Maharashtra Weather Hub</h1>
+            <p class="subtitle">Real-time weather updates for major cities in Maharashtra</p>
+        </header>
+
+        <!-- City Selection Section -->
+        <section class="search-section">
+            <label for="citySelect">Select a City:</label>
+            <select id="citySelect">
+                <option value="">-- Choose a city --</option>
+                <option value="mumbai">Mumbai (19.0760, 72.8777)</option>
+                <option value="pune">Pune (18.5204, 73.8567)</option>
+                <option value="nagpur">Nagpur (21.1458, 79.0882)</option>
+                <option value="nashik">Nashik (19.9975, 74.1860)</option>
+                <option value="aurangabad">Aurangabad (19.8762, 75.3433)</option>
+            </select>
+            <button id="fetchBtn" class="fetch-btn">Get Weather</button>
+        </section>
+
+        <!-- Weather Card Section -->
+        <section class="weather-section">
+            <div id="weatherCard" class="weather-card hidden">
+                <!-- City Name -->
+                <div class="city-header">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="lastUpdate" class="update-time">Updated: --:--:--</p>
+                </div>
+
+                <!-- Weather Information -->
+                <div class="weather-info">
+                    <!-- Temperature Display -->
+                    <div class="weather-item temperature">
+                        <span class="weather-label">Temperature</span>
+                        <span id="temperature" class="weather-value">--°C</span>
+                    </div>
+
+                    <!-- Wind Speed Display -->
+                    <div class="weather-item wind-speed">
+                        <span class="weather-label">Wind Speed</span>
+                        <span id="windSpeed" class="weather-value">-- km/h</span>
+                    </div>
+
+                    <!-- Weather Condition Display -->
+                    <div class="weather-item condition">
+                        <span class="weather-label">Condition</span>
+                        <span id="condition" class="weather-value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message Display -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner hidden"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
