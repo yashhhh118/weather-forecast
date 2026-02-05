@@ -27,11 +27,11 @@ body {
    Navigation Bar Styles
    ======================================== */
 .navbar {
-    background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff6b35 100%);
+    background: linear-gradient(90deg, #1e3a5f 0%, #2c5282 50%, #3d5a80 100%);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 8px 32px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 8px 32px rgba(30, 58, 95, 0.3);
     backdrop-filter: blur(10px);
 }
 
@@ -145,11 +145,11 @@ body {
    Hero Section
    ======================================== */
 .hero-section {
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%),
-                linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff6b35 100%);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%),
+                linear-gradient(90deg, #1e3a5f 0%, #2c5282 50%, #3d5a80 100%);
     padding: clamp(50px, 8vh, 100px) clamp(20px, 3vw, 30px);
     text-align: center;
-    color: #ff6b35;
+    color: #5dade2;
     position: relative;
     overflow: hidden;
 }
@@ -182,7 +182,7 @@ body {
     font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 900;
     margin-bottom: clamp(15px, 2vh, 20px);
-    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -227,8 +227,8 @@ body {
 }
 
 .search-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
-    border: 2px solid rgba(233, 30, 99, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(74, 159, 181, 0.05) 100%);
+    border: 2px solid rgba(74, 159, 181, 0.3);
     padding: clamp(30px, 5vh, 50px) clamp(25px, 5vw, 40px);
     border-radius: clamp(12px, 2vw, 16px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -237,7 +237,7 @@ body {
 }
 
 .search-card h2 {
-    color: #e91e63;
+    color: #4a6fa5;
     font-size: clamp(1.3rem, 4vw, 2rem);
     margin-bottom: clamp(20px, 3vh, 30px);
     text-align: center;
@@ -255,7 +255,7 @@ body {
     flex: 1;
     min-width: 280px;
     padding: clamp(12px, 1.5vh, 16px) clamp(15px, 2vw, 20px);
-    border: 2px solid rgba(233, 30, 99, 0.4);
+    border: 2px solid rgba(74, 159, 181, 0.4);
     border-radius: clamp(8px, 1.5vw, 12px);
     font-size: clamp(0.9rem, 2vw, 1.05rem);
     background-color: rgba(31, 31, 61, 0.8);
@@ -267,21 +267,21 @@ body {
 }
 
 .city-select:hover {
-    border-color: #e91e63;
-    background-color: rgba(233, 30, 99, 0.1);
-    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.2);
+    border-color: #4a6fa5;
+    background-color: rgba(74, 159, 181, 0.1);
+    box-shadow: 0 8px 25px rgba(74, 159, 181, 0.2);
 }
 
 .city-select:focus {
     outline: none;
-    border-color: #ff6b35;
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
-    background-color: rgba(233, 30, 99, 0.15);
+    border-color: #5dade2;
+    box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);
+    background-color: rgba(74, 159, 181, 0.15);
 }
 
 .search-btn {
     padding: clamp(12px, 1.5vh, 16px) clamp(25px, 5vw, 40px);
-    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
     color: white;
     border: none;
     border-radius: clamp(8px, 1.5vw, 12px);
@@ -289,7 +289,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 10px 30px rgba(74, 159, 181, 0.3);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -312,7 +312,7 @@ body {
 
 .search-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+    box-shadow: 0 15px 40px rgba(74, 159, 181, 0.4);
 }
 
 .search-btn:hover::before {
@@ -374,8 +374,8 @@ body {
 }
 
 .weather-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
-    border: 2px solid rgba(233, 30, 99, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(74, 159, 181, 0.05) 100%);
+    border: 2px solid rgba(74, 159, 181, 0.2);
     border-radius: clamp(14px, 2.5vw, 20px);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -383,16 +383,16 @@ body {
 }
 
 .weather-header {
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.2) 0%, rgba(93, 173, 226, 0.2) 100%);
     padding: clamp(25px, 3vh, 35px) clamp(25px, 5vw, 40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgba(233, 30, 99, 0.3);
+    border-bottom: 2px solid rgba(74, 159, 181, 0.3);
 }
 
 .weather-city-info h2 {
-    color: #e91e63;
+    color: #4a6fa5;
     font-size: clamp(1.6rem, 5vw, 2.5rem);
     margin-bottom: clamp(8px, 1vh, 10px);
     font-weight: 800;
@@ -432,7 +432,7 @@ body {
 .temp-value {
     font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 900;
-    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -441,7 +441,7 @@ body {
 
 .temp-condition {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: rgba(233, 30, 99, 0.9);
+    color: rgba(74, 159, 181, 0.9);
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -458,8 +458,8 @@ body {
     align-items: center;
     gap: 18px;
     padding: 20px 25px;
-    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(124, 77, 255, 0.1) 100%);
-    border: 1px solid rgba(0, 188, 212, 0.2);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.1) 0%, rgba(74, 159, 181, 0.08) 100%);
+    border: 1px solid rgba(74, 159, 181, 0.2);
     border-radius: 14px;
     flex: 1;
     min-width: 160px;
@@ -467,10 +467,10 @@ body {
 }
 
 .detail-item:hover {
-    border-color: rgba(0, 188, 212, 0.6);
-    background: linear-gradient(135deg, rgba(0, 188, 212, 0.15) 0%, rgba(124, 77, 255, 0.15) 100%);
+    border-color: rgba(74, 159, 181, 0.6);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.15) 0%, rgba(74, 159, 181, 0.12) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.2);
+    box-shadow: 0 10px 30px rgba(74, 159, 181, 0.2);
 }
 
 .detail-icon {
@@ -485,7 +485,7 @@ body {
 
 .detail-label {
     font-size: 0.9rem;
-    color: rgba(0, 188, 212, 0.8);
+    color: rgba(74, 159, 181, 0.8);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -530,8 +530,8 @@ body {
    Forecast Card Styles
    ======================================== */
 .forecast-card-container {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
-    border: 2px solid rgba(233, 30, 99, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(74, 159, 181, 0.05) 100%);
+    border: 2px solid rgba(74, 159, 181, 0.2);
     padding: clamp(25px, 4vh, 40px);
     border-radius: clamp(14px, 2.5vw, 20px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -540,7 +540,7 @@ body {
 }
 
 .forecast-title {
-    color: #e91e63;
+    color: #4a6fa5;
     font-size: clamp(1.3rem, 4vw, 1.8rem);
     margin-bottom: clamp(20px, 3vh, 30px);
     text-align: left;
@@ -560,17 +560,17 @@ body {
 }
 
 .forecast-scroll::-webkit-scrollbar-track {
-    background: rgba(233, 30, 99, 0.1);
+    background: rgba(74, 159, 181, 0.1);
     border-radius: 10px;
 }
 
 .forecast-scroll::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #e91e63 0%, #ff6b35 100%);
+    background: linear-gradient(180deg, #4a6fa5 0%, #5dade2 100%);
     border-radius: 10px;
 }
 
 .forecast-scroll::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #ff1744 0%, #ffab40 100%);
+    background: linear-gradient(180deg, #5dade2 0%, #6bc3f0 100%);
 }
 
 .forecast-container {
@@ -580,8 +580,8 @@ body {
 
 /* Individual Forecast Card */
 .forecast-day {
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
-    border: 2px solid rgba(233, 30, 99, 0.2);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%);
+    border: 2px solid rgba(74, 159, 181, 0.2);
     border-radius: clamp(10px, 1.5vw, 14px);
     padding: clamp(16px, 2vh, 22px);
     text-align: center;
@@ -592,16 +592,16 @@ body {
 }
 
 .forecast-day:hover {
-    border-color: rgba(233, 30, 99, 0.6);
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.15) 0%, rgba(255, 107, 53, 0.15) 100%);
-    box-shadow: 0 15px 40px rgba(233, 30, 99, 0.25);
+    border-color: rgba(74, 159, 181, 0.6);
+    background: linear-gradient(135deg, rgba(74, 159, 181, 0.15) 0%, rgba(93, 173, 226, 0.15) 100%);
+    box-shadow: 0 15px 40px rgba(74, 159, 181, 0.25);
     transform: translateY(-8px);
 }
 
 /* Badge for Today/Past/Future */
 .forecast-date-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
     color: white;
     font-size: 0.7rem;
     padding: 6px 12px;
@@ -610,22 +610,22 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 159, 181, 0.3);
 }
 
 .forecast-date-badge.past {
-    background: linear-gradient(135deg, #666 0%, #999 100%);
-    box-shadow: 0 4px 15px rgba(100, 100, 100, 0.3);
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+    box-shadow: 0 4px 15px rgba(127, 140, 141, 0.3);
 }
 
 .forecast-date-badge.today {
-    background: linear-gradient(135deg, #ff1744 0%, #ff6e40 100%);
-    box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+    background: linear-gradient(135deg, #2c5282 0%, #4a6fa5 100%);
+    box-shadow: 0 4px 15px rgba(74, 159, 181, 0.4);
 }
 
 .forecast-date-badge.future {
-    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    background: linear-gradient(135deg, #4a6fa5 0%, #5dade2 100%);
+    box-shadow: 0 4px 15px rgba(74, 159, 181, 0.3);
 }
 
 /* Day Name */
@@ -639,7 +639,7 @@ body {
 
 /* Date */
 .forecast-date {
-    color: rgba(0, 188, 212, 0.8);
+    color: rgba(74, 159, 181, 0.8);
     font-size: 0.9rem;
     margin-bottom: 12px;
     font-weight: 600;
@@ -683,14 +683,14 @@ body {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px solid rgba(0, 188, 212, 0.2);
+    border-top: 1px solid rgba(74, 159, 181, 0.2);
 }
 
 .forecast-detail-label {
     font-weight: 700;
     display: block;
     font-size: 0.8rem;
-    color: rgba(0, 188, 212, 0.9);
+    color: rgba(74, 159, 181, 0.9);
     letter-spacing: 0.5px;
 }
 
@@ -725,15 +725,15 @@ body {
    Loading Spinner Styles
    ======================================== */
 .spinner {
-    border: 5px solid rgba(233, 30, 99, 0.2);
-    border-top: 5px solid #e91e63;
-    border-right: 5px solid #ff6b35;
+    border: 5px solid rgba(74, 159, 181, 0.2);
+    border-top: 5px solid #4a6fa5;
+    border-right: 5px solid #5dade2;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     animation: spin 1.5s linear infinite;
     margin: 40px auto;
-    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 0 20px rgba(74, 159, 181, 0.3);
 }
 
 @keyframes spin {
@@ -756,7 +756,7 @@ body {
    Footer Styles
    ======================================== */
 .footer {
-    background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff6b35 100%);
+    background: linear-gradient(90deg, #1e3a5f 0%, #2c5282 50%, #3d5a80 100%);
     color: white;
     padding: clamp(40px, 5vh, 60px) clamp(20px, 3vw, 30px) clamp(20px, 3vh, 25px);
     margin-top: clamp(60px, 8vh, 100px);
@@ -800,7 +800,7 @@ body {
 }
 
 .footer-section a:hover {
-    color: #ff6b35;
+    color: #5dade2;
     transform: translateX(4px);
 }
 
